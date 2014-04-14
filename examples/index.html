@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="paudm_plots_example">
+	<head>
+	
+		<link rel='shortcut icon' href="logos/favicon.png"> <title>PAUDM plots</title>
+		<meta charset="utf-8">
+
+	</head>
+	<body>
+	<style>
+	
+	</style>
+	
+		<script src="components/angular/angular.min.js"></script>
+		<script src="../src/d3_ang_module.js"></script>
+		<script src="../src/paudm_d3_bars.js"></script>
+		<script src="index.js"></script>
+
+		<div ng-controller="Controller">
+		<paudm-bars api="data" ></paudm-bars> 
+<p> {{ data.name }}</p>
+<input ng-model=data.name>
+		</div>
+	</body>
+</html>

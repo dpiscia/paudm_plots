@@ -1,0 +1,13 @@
+{
+  "name": "paudm_plots",
+  "version": "0.0.1",
+  "main": "dist/paudm_plots_0.0.1.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "angular": "1.2" },
+  "devDependencies": {
+    }
+}
