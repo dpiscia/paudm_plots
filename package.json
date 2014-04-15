@@ -1,0 +1,38 @@
+{
+  "name": "paudm_plots",
+  "version": "0.0.1",
+  "description": "Paudm plots based on D3.js",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "angular": "^1.2"
+  },
+  "devDependencies": {
+    "karma": "~0.10",
+    "protractor": "~0.17.0",
+    "http-server": "^0.6.1",
+    "bower": "^1.0.1",
+    "shelljs": "^0.2.6"},
+  "scripts": {
+    "postinstall": "bower install",	
+    "test": "grunt",
+    "start": "http-server -p 8000",
+    "test": "karma start test/karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dpiscia/paudm_plots.git"
+  },
+  "keywords": [
+    "angularjs",
+    "d3.js"
+  ],
+  "author": "PAUDM Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dpiscia/paudm_plots/issues"
+  },
+  "homepage": "https://github.com/dpiscia/paudm_plots"
+}

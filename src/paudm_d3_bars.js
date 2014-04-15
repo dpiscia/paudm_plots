@@ -37,18 +37,7 @@ angular.module('paudm_plots')
 				.attr("transform", "translate($scope.api.translate.x ,$scope.api.translate.y )");
 			
 	  	};
-		var bars_definition = function()
-					{
-      					var x = d3.scale.ordinal()
-						.rangeRoundBands([0, ($scope.api.width/$scope.api.data.length) ], 0.1 , 0.5);
-					var y = d3.scale.linear()
-				    	.range([400, 0]);
-
-					x.domain($scope.api.data.map(function(d) { return d.name; }));
- 					y.domain([0, d3.max($scope.api.data, function(d) { return d.counts; })]);
-					return x(),y()
-					}		
-
+		
 		this.render = function(){
 				//remove elements from prevois screens
 				self.svg.selectAll("g").remove();
@@ -59,14 +48,18 @@ angular.module('paudm_plots')
 				var bars = self.svg.selectAll(".bar")
 					.data($scope.api.data);
 
-				//compute bars ranges
-
 
 
 				//define color mapping
 				var color = d3.scale.category20(); 
 
-				var x,y = bars_definition()
+      					var x = d3.scale.ordinal()
+						.rangeRoundBands([0, ($scope.api.width/$scope.api.data.length) ], 0.1 , 0.5);
+					var y = d3.scale.linear()
+				    	.range([400, 0]);
+
+					x.domain($scope.api.data.map(function(d) { return d.name; }));
+ 					y.domain([0, d3.max($scope.api.data, function(d) { return d.counts; })]);
 
       				bars.exit().remove();  
 
