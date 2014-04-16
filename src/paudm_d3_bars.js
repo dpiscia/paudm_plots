@@ -1,9 +1,12 @@
-'use strict';
+(function () {
+   'use strict';
+   // this function is strict...
+}());
 
 /* Directives */
 
 
-var paudm_d3_plots = angular.module('paudm_plots', ['d3'])
+var paudm_d3_plots = angular.module('paudm_plots', ['d3']);
 
 
 angular.module('paudm_plots').directive('paudmBars', function() {
@@ -18,7 +21,7 @@ angular.module('paudm_plots').directive('paudmBars', function() {
       paudm_bars_ctrl.init( element );
     }
   };
-})
+});
 
 
 angular.module('paudm_plots')
@@ -77,8 +80,8 @@ angular.module('paudm_plots')
 				bars.transition()
 					.delay(function(d, i) { return i * 50; })
 					.attr("y", function(d) { return y(d.counts); })
-					.attr("height", function(d) { return $scope.api.height });
-				}
+					.attr("height", function(d) { return $scope.api.height; });
+				};
 	  	 this.api = function() {
 			    return $scope.api;
 			  };
@@ -90,4 +93,4 @@ angular.module('paudm_plots')
 
 		
 }
-)
+);
