@@ -93,4 +93,23 @@ npm run protractor
 This script will execute the end-to-end tests against the application being hosted on the
 development server.
 
+##Grunt
+
+you can prepare a development enviroment by pressing
+````
+grunt dev
+````
+
+and then go to url 
+
+`http://localhost:8000/dev`
+
+you can prepare a production (source compiled)enviroment by pressing
+````
+grunt prod
+````
+
+and then go to url 
+
+`http://localhost:8000/prod`
 
