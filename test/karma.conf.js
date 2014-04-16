@@ -4,8 +4,8 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
+      'components/angular/angular.js',
+      'components/angular-mocks/angular-mocks.js',
       'src/*.js',
       'test/unit/*.js'
     ],
@@ -14,11 +14,12 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['Chrome','Firefox','Safari'],
 
     plugins : [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
+            'karma-safari-launcher',
             'karma-jasmine'
             ],
 
