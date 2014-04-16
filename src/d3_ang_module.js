@@ -1,6 +1,7 @@
 angular.module('d3', [])
   .factory('d3', [function(){
     var d3;
+
 d3 = function() {
   var d3 = {
     version: "3.3.9"
