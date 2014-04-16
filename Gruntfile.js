@@ -6,10 +6,14 @@ module.exports = function(grunt) {
 		    options: {
 		      separator: ';',
 		    },
-		    dist: {
-		      src: ['src/d3_ang_module.js', 'dest/paudm_d3_bars.min.js'],
-		      dest: 'dest/built.js',
+		    dist_min: {
+		      src: ['src/d3_ang_module.min.js', 'src/paudm_d3_bars.min.js'],
+		      dest: 'dist/paudm_plots.min.js',
 		    },
+		    dist: {
+		      src: ['src/d3_ang_module.js', 'dist/paudm_d3_bars.js'],
+		      dest: 'dist/paudm_plots.js',
+		    }
 		 },
 		env : {
 				options : {},
@@ -38,8 +42,8 @@ module.exports = function(grunt) {
 		    all: ['Gruntfile.js', 'src/paudm_d3_bars.js']
 		  },
 		  clean: {
-			  dev: ["dest"],
-			  prod: ["prod"]
+			  prod: ["prod"],
+			  dev: ["dev"]
 		},
 
 		  uglify: {
@@ -48,7 +52,8 @@ module.exports = function(grunt) {
     },
 		    prod: {
 		      files: {
-		        'dest/paudm_d3_bars.min.js': [ 'src/paudm_d3_bars.js']
+		        'src/paudm_d3_bars.min.js': [ 'src/paudm_d3_bars.js'],
+		        'src/d3_ang_module.min.js': [ 'src/d3_ang_module.js'],
 		      }
 		    }
 		  }  
@@ -63,7 +68,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
   // Default task(s).
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev','concat', 'preprocess:dev']);
-  grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod','uglify', 'concat','preprocess:prod']);
-
+  grunt.registerTask('dev', ['jshint', 'env:dev',  'clean:dev', 'concat:dist', 'preprocess:dev']);
+  grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod','uglify', 'concat:dist_min','preprocess:prod']);
+  grunt.registerTask('minify', ['uglify']);
+  grunt.registerTask('distribution', ['uglify', 'concat:dist_min']);
 };
