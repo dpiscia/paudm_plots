@@ -83,6 +83,13 @@ npm run update-webdriver
 
 This will download and install the latest version of the stand-alone WebDriver tool.
 
+To ensure that you are going to test the latest changes, you should prepare a distribution of your source
+
+```
+npm run distribution
+```
+
+
 Once you have ensured that the development web server hosting our application is up and running
 and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
 
@@ -92,6 +99,12 @@ npm run protractor
 
 This script will execute the end-to-end tests against the application being hosted on the
 development server.
+
+
+To run the server , the distribution ,and the test you have to type:
+```
+npm run all
+```
 
 ##Grunt
 
@@ -113,3 +126,12 @@ and then go to url
 
 `http://localhost:8000/prod`
 
+you can minizing the source by pressing
+````
+grunt minify
+````
+
+you can prepare a distribution from source (minimy and concatenation)
+````
+grunt distribution
+````
