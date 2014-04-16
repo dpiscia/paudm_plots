@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 		      dest: 'dist/paudm_plots.min.js',
 		    },
 		    dist: {
-		      src: ['src/d3_ang_module.js', 'dist/paudm_d3_bars.js'],
+		      src: ['src/d3_ang_module.js', 'src/paudm_d3_bars.js'],
 		      dest: 'dist/paudm_plots.js',
 		    }
 		 },

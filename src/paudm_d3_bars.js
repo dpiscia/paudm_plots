@@ -24,7 +24,7 @@ angular.module('paudm_plots').directive('paudmBars', function() {
 });
 
 
-angular.module('paudm_plots')
+angular.module('paudm_plots ')
 	.controller('paudm_bars_ctrl', function($scope, $attrs, d3){
 		var self = this;
 	  	console.log('ctrl dir');
